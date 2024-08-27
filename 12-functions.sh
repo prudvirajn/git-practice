@@ -5,7 +5,11 @@
 USERID=$(id -u)
 
 VALIDATE(){
-
+    if [ $1 -ne 0 ]
+    then
+        echo "command is..FAILED"
+        exit1
+    fi
 }   
 
 if [ $USERID -ne 0 ]
