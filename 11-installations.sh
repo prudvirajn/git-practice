@@ -30,6 +30,6 @@ then
     else
         echo "MySQL installation is success"
     fi
-else
+ else
      echo "MySQL is already installed ,nothing to do"
 fi   
