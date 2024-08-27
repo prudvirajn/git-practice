@@ -10,7 +10,7 @@ G="\e[32m"
     
     echo "please run this script with root priveleges"
     exit 1
-    fi
+fi
  }   
 
 VALIDATE(){
