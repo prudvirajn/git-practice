@@ -21,28 +21,10 @@ VALIDATE(){
     fi
 }   
 
-CHECK_ROOT
+CHEK_ROOT 
 
-dnf install git -y
-
-VALIDATE $?
-
-if [ $? -ne 0 ]
-then
-    echo "git is not installed,going to install it"
-    dnf install git -y
-    VALIDATE $? "Installing git"
-else
-    echo "git is already installed, nothing to do.."
-fi
-
-dnf installed mysql
-
-if [ $? -ne 0 ]
-then
-    echo "MySQL is not installed..going to instsll"
-    dnf install mysql -y
-    VALIDATE $? "installing MySQL"
- else
-     echo "MySQL is already installed ,nothing to do"
-fi   
+#sh 15-loops.sh git mysql postfix
+for package is $@ #refers to all arguments passed to it
+do
+  echo $package
+done
