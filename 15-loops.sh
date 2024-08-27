@@ -22,11 +22,19 @@ VALIDATE(){
         echo -e "$2 is...$G SUCCESS $N"
     fi
 } 
-  
+
  CHECK_ROOT
 
  #sh 15-loops.sh git mysql nginx
  for package in $@ 
  do
-   echo $package
- done
+   dnf installed $package
+   if [ $? -ne 0 ]
+   then
+       echo "g$package is mot installed,going to install it.."
+       dnf install $package -y
+       VALIDATE $? "installing $package"
+    else
+        echo "$package is already installed..nothing to do"
+    fi
+done
