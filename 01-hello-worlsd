@@ -1,3 +1,4 @@
 #!/bin/bash
+# adding another word for testing
 
 echo "hello world"
